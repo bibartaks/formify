@@ -1,4 +1,4 @@
-# React.js Single Page Application with MongoDB Backend
+# React.js Single Page Application
 
 This project is a responsive single page application built using React.js as the frontend framework, Vite for project scaffolding, and MongoDB for the backend database with Express.js. The application allows users to input and save their information, including name, selected sectors, and agreement to terms.
 
@@ -7,7 +7,6 @@ This project is a responsive single page application built using React.js as the
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Database Structure](#database-structure)
 - [Online Testing](#online-testing)
 
