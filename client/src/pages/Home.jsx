@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
+import Select from "react-select"
 
 function App() {
   const [data, setData] = useState([])
@@ -93,7 +94,9 @@ function App() {
   const renderOptions = subSector => {
     return subSector.subSectorItems.map(item => (
       <React.Fragment key={item.id}>
-        <option value={item.name}>&nbsp;&nbsp;&nbsp;&nbsp;{item.name}</option>
+        <option value={item.name}>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {item.name}
+        </option>
         {item.items && item.items.length > 0 && renderNestedOptions(item.items)}
       </React.Fragment>
     ))
@@ -102,7 +105,8 @@ function App() {
   const renderNestedOptions = nestedItems => {
     return nestedItems.map(nestedItem => (
       <option value={nestedItem.name} key={nestedItem.id}>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nestedItem.name}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{" "}
+        {nestedItem.name}
       </option>
     ))
   }
@@ -139,7 +143,7 @@ function App() {
                     <React.Fragment key={subSector.id}>
                       <option value={subSector.name} key={subSector.id}>
                         &nbsp;&nbsp;&nbsp;&nbsp;{subSector.name}
-                      </option>
+                      </option>{" "}
                       {renderOptions(subSector)}
                     </React.Fragment>
                   ))}

@@ -142,13 +142,14 @@ footer {
 }
 
 /* Sidebar Styles */
-.sidebar {
+/* .sidebar {
   position: absolute;
   background-color: #0096aa;
   width: 23.5%;
   margin-left: -2rem;
-  height: calc(100vh - 60px);
-}
+
+  height: 100vh;
+} */
 
 /* Media Queries */
 @media screen and (max-width: 1200px) {
