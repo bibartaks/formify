@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-function App() {
+export default function App() {
   const [data, setData] = useState([])
   const [selectedOptions, setSelectedOptions] = useState([])
   const [name, setName] = useState("")
@@ -57,7 +57,7 @@ function App() {
     e.preventDefault()
 
     if (!agreeToTerms) {
-      setTermsError("Please agree to the terms.")
+      setTermsError("Please agree to the terms to continue.")
       return
     }
 
@@ -79,29 +79,9 @@ function App() {
 
       const result = await response.json()
 
-      // if (result.success) {
-      //   // Display toast only if the form is saved successfully
-      //   toast("Form saved successfully")
-      // }
-      // if (result.success) {
-      //   console.log("Form saved successfully")
-      //   toast.success("Form saved.", {
-      //     position: "top-right",
-      //     autoClose: 5000,
-      //     hideProgressBar: false,
-      //     closeOnClick: true,
-      //     pauseOnHover: true,
-      //     draggable: true,
-      //     progress: undefined,
-      //     theme: "light",
-      //   })
-      // }
-
       console.log("Save/Update Result:", result)
 
       if (result.acknowledged && result.modifiedCount > 0) {
-        // Display toast only if the form is saved successfully
-        // toast("Form saved successfully")
         toast.success("Saved successfully 🎉", {
           position: "top-right",
           autoClose: 5000,
@@ -114,18 +94,9 @@ function App() {
         })
       } else {
         console.error("Error saving form:", result) // Log the entire response for further inspection
-        toast.error("Error saving form")
       }
     } catch (error) {
       console.error("Error saving/updating data:", error)
-    }
-  }
-
-  const handleEditClick = e => {
-    e.preventDefault()
-
-    if (nameInputRef.current) {
-      nameInputRef.current.focus()
     }
   }
 
@@ -165,8 +136,7 @@ function App() {
           pauseOnHover
           theme="light"
         />
-        {/* Same as */}
-        <ToastContainer />
+
         <form>
           <label htmlFor="name">Name</label>
           <input
@@ -181,7 +151,7 @@ function App() {
           />
           <br />
           <div className="select-container">
-            <label htmlFor="sectors">Sectors</label>
+            <label htmlFor="sectors">Select sector</label>
             <select
               name="sectors"
               id="sectors"
@@ -229,5 +199,3 @@ function App() {
     </header>
   )
 }
-
-export default App

@@ -21,7 +21,7 @@ nav h1 {
   color: #222222;
 }
 
-.container {
+nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ form {
   display: flex;
   flex-direction: column;
   min-width: 600px;
-  margin: 3rem auto;
+  margin: 7rem auto;
   border: 1px solid lightgray;
   padding: 1rem;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
@@ -86,14 +86,14 @@ form select {
 }
 
 form button {
-  padding: 0.4rem 0.3rem;
+  padding: 0.4rem 1.5rem;
   font-family: inherit;
   background-color: black;
   color: white;
   border: none;
   margin-bottom: 1rem;
   cursor: pointer;
-  width: 15%;
+  /* width: 15%; */
   border-radius: 200px;
   font-size: 14px;
 }
@@ -107,22 +107,15 @@ form .select-container {
   grid-template-columns: 1fr;
 }
 
-form .select-container label {
-}
-
 .save-btn {
   background-color: green;
   margin-right: 0.5rem;
 }
 
-.edit-btn {
-  background-color: #0096aa;
-}
-
 /* Footer Styles */
 footer {
-  background-color: #0096aa;
-  color: white;
+  background-color: #e5e5e5;
+  color: #222222;
 }
 
 .footer-container {
@@ -151,16 +144,6 @@ footer {
 .header-container {
   display: grid;
 }
-
-/* Sidebar Styles */
-/* .sidebar {
-  position: absolute;
-  background-color: #0096aa;
-  width: 23.5%;
-  margin-left: -2rem;
-
-  height: 100vh;
-} */
 
 /* Media Queries */
 
@@ -237,12 +220,16 @@ footer {
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
 }
 
-.userData-box h1 {
-  margin-bottom: 1rem;
-}
-
 .userData-box h3 {
   margin-bottom: 0.5rem;
+}
+
+.userData-text {
+  margin-bottom: 0.5rem;
+}
+
+.userData-text-bold {
+  font-weight: bold;
 }
 
 .userData-box ul {
@@ -273,7 +260,17 @@ footer {
   }
 }
 
+/* Error msg */
 .error-msg {
   color: red;
   font-size: 0.9rem;
+}
+
+/* Loading container */
+.loading-container {
+  height: calc(100vh - 60px);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
