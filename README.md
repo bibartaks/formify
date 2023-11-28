@@ -1,61 +1,45 @@
-# Project Name
+# React.js Single Page Application with MongoDB Backend
 
-A description of your project goes here.
+This project is a responsive single page application built using React.js as the frontend framework, Vite for project scaffolding, and MongoDB for the backend database with Express.js. The application allows users to input and save their information, including name, selected sectors, and agreement to terms.
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
+- [Project Overview](#project-overview)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Database](#database)
+- [Database Structure](#database-structure)
 - [Source Code](#source-code)
 - [Online Testing](#online-testing)
-- [Contributing](#contributing)
-- [License](#license)
 
-## Introduction
+## Project Overview
 
-Briefly describe the purpose and functionality of your project.
+### 1. Frontend (React.js with Vite)
 
-## Features
+The frontend is built using React.js and Vite to ensure a responsive and efficient single page application. The main features include:
 
-- Responsive single page application using React.js
-- "Sectors" selectbox with data populated from the database
-- Input form validation
-- Data storage in the database
-- Edit functionality for the user's own data during the session
-- Linked and responsive views
+- A form for users to input their data.
+- A "Sectors" select box populated with data from the backend.
+- Validation of all input fields (name, sectors, agreement to terms).
+- Ability for users to edit their data during the session.
 
-## Prerequisites
+### 2. Backend (Express.js with MongoDB)
 
-Specify any prerequisites or dependencies needed to run your project.
+The backend is implemented using Express.js and MongoDB. Key functionalities include:
+
+- Storing user data (name, sectors, agreement) in the MongoDB database.
+- Retrieving and displaying "Sectors" data in the frontend select box.
+- Handling requests to save, validate, and refill user data.
+
+### 3. Database Structure
+
+The MongoDB database has a structure that accommodates user information. A full database dump (structure and data) is provided for reference.
 
 ## Installation
 
-Provide step-by-step instructions on how to install and set up your project.
+To set up and run the project locally, follow these steps:
 
-## Usage
+1. Clone the repository:
 
-Explain how to use your application, including any important instructions or details.
-
-## Database
-
-Include information about the database structure and provide a full database dump.
-
-## Source Code
-
-Link to the GitHub repository where users can find the source code.
-
-## Online Testing
-
-Provide a link to Vercel or any other platform where users can test your application online.
-
-## Contributing
-
-If you want others to contribute to your project, include guidelines for how they can do so.
-
-## License
-
-Specify the license under which your project is distributed.
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
