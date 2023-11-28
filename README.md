@@ -112,9 +112,6 @@ To set up and run the project locally, follow these steps:
     npm run dev
     ```
 
-9. **Open your browser and navigate to [http://localhost:5173/](http://localhost:5173/) to see the application in action.**
-
-
 ## Online Testing
 
 You can also test the application online. Visit the following link to access the live version:
