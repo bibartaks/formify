@@ -6,7 +6,10 @@ export default function Navbar() {
     <nav>
       <div className="container">
         <div className="logo">
-          <h1>Formify</h1>
+          <h1>
+            {" "}
+            <span className="logo-first-text">F</span>ormify
+          </h1>
         </div>
         <ul>
           <li>

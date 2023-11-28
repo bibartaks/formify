@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
-import Select from "react-select"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const [data, setData] = useState([])
@@ -77,7 +78,44 @@ function App() {
       )
 
       const result = await response.json()
+
+      // if (result.success) {
+      //   // Display toast only if the form is saved successfully
+      //   toast("Form saved successfully")
+      // }
+      // if (result.success) {
+      //   console.log("Form saved successfully")
+      //   toast.success("Form saved.", {
+      //     position: "top-right",
+      //     autoClose: 5000,
+      //     hideProgressBar: false,
+      //     closeOnClick: true,
+      //     pauseOnHover: true,
+      //     draggable: true,
+      //     progress: undefined,
+      //     theme: "light",
+      //   })
+      // }
+
       console.log("Save/Update Result:", result)
+
+      if (result.acknowledged && result.modifiedCount > 0) {
+        // Display toast only if the form is saved successfully
+        // toast("Form saved successfully")
+        toast.success("Saved successfully 🎉", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      } else {
+        console.error("Error saving form:", result) // Log the entire response for further inspection
+        toast.error("Error saving form")
+      }
     } catch (error) {
       console.error("Error saving/updating data:", error)
     }
@@ -115,6 +153,20 @@ function App() {
     <header>
       <div className="header-container">
         <div className="sidebar"></div>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+        <ToastContainer />
         <form>
           <label htmlFor="name">Name</label>
           <input
@@ -136,6 +188,7 @@ function App() {
               onChange={handleSelectChange}
               value={selectedOptions}
               multiple
+              size={7}
             >
               {data.map(sector => (
                 <optgroup label={sector.name} key={sector.id}>
@@ -160,7 +213,7 @@ function App() {
             />{" "}
             Agree to terms
           </label>
-          <span style={{ color: "red" }}>{termsError}</span>
+          <span className="error-msg">{termsError}</span>
           <br />
           <div className="form-btns">
             <button
@@ -169,13 +222,6 @@ function App() {
               onClick={handleSaveClick}
             >
               Save
-            </button>
-            <button
-              type="submit"
-              className="edit-btn"
-              onClick={handleEditClick}
-            >
-              Edit
             </button>
           </div>
         </form>
