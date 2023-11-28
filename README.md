@@ -9,7 +9,6 @@ This project is a responsive single page application built using React.js as the
 - [Installation](#installation)
 - [Usage](#usage)
 - [Database Structure](#database-structure)
-- [Source Code](#source-code)
 - [Online Testing](#online-testing)
 
 ## Project Overview
