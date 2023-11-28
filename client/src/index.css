@@ -10,7 +10,8 @@ body {
 }
 
 nav {
-  background-color: lightgray;
+  /* background-color: ; */
+  border-bottom: 1px solid lightgray;
 }
 
 .container {
@@ -31,4 +32,66 @@ li a {
   text-decoration: none;
   color: black;
   margin-right: 2rem;
+}
+
+header {
+  height: calc(100vh - 51px);
+  /* background-color: gray; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  align-items: center;
+  padding: 0rem 2rem;
+}
+
+form {
+  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+}
+
+form input {
+  padding: 0.5rem 0.3rem;
+  font-family: inherit;
+  /* outline: 1px solid black; */
+  border: 1px solid black;
+}
+
+form select {
+  padding: 0.5rem 0.2rem;
+  font-family: inherit;
+}
+
+form button {
+  padding: 0.7rem 0.3rem;
+  font-family: inherit;
+  background-color: black;
+  color: white;
+  border: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+form .select-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+form .select-container label {
+  /* background-color: red; */
+}
+
+.save-btn {
+  background-color: green;
+}
+
+.edit-btn {
+  background-color: red;
 }

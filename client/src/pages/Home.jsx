@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/")
+        const response = await fetch("https://formify-bibartaks.vercel.app/")
         const result = await response.json()
         setData(result)
       } catch (error) {
@@ -50,9 +50,9 @@ function App() {
   }
 
   return (
-    <>
+    <header>
       <form>
-        <legend>Form Details</legend>
+        {/* <legend>Form Details</legend> */}
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -63,28 +63,29 @@ function App() {
           onChange={e => setName(e.target.value)}
         />
         <br />
-        <label htmlFor="sectors">Sectors</label>
-        <select
-          name="sectors"
-          id="sectors"
-          onChange={handleSelectChange}
-          value={selectedOptions}
-          multiple
-        >
-          {data.map(sector => (
-            <optgroup label={sector.name} key={sector.id}>
-              {sector.subSectors.map(subSector => (
-                <React.Fragment key={subSector.id}>
-                  <option value={subSector.name} key={subSector.id}>
-                    &nbsp;&nbsp;&nbsp;&nbsp;{subSector.name}
-                  </option>
-                  {renderOptions(subSector)}
-                </React.Fragment>
-              ))}
-            </optgroup>
-          ))}
-        </select>
-        <br />
+        <div className="select-container">
+          <label htmlFor="sectors">Sectors</label>
+          <select
+            name="sectors"
+            id="sectors"
+            onChange={handleSelectChange}
+            value={selectedOptions}
+            multiple
+          >
+            {data.map(sector => (
+              <optgroup label={sector.name} key={sector.id}>
+                {sector.subSectors.map(subSector => (
+                  <React.Fragment key={subSector.id}>
+                    <option value={subSector.name} key={subSector.id}>
+                      &nbsp;&nbsp;&nbsp;&nbsp;{subSector.name}
+                    </option>
+                    {renderOptions(subSector)}
+                  </React.Fragment>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+        </div>
         <br />
         <label>
           <input
@@ -95,10 +96,14 @@ function App() {
           Agree to terms
         </label>
         <br />
-        <br />
-        <input type="submit" value="Save" />
+        <button type="submit" className="save-btn">
+          Save
+        </button>
+        <button type="submit" className="edit-btn">
+          Edit
+        </button>
       </form>
-    </>
+    </header>
   )
 }
 
